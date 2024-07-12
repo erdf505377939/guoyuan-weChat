@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "nav-back": "../../components/NavBack/index",
+    "item": "./components/Item/index",
+    "tab-item": "./components/Tab/index"
+  }
+}

@@ -1,0 +1,36 @@
+<template>
+	<view class="item_border">
+    <image :src="props.data.bgImage" />
+  </view>
+</template>
+
+<script setup>
+  import {
+    ref,
+    onMounted
+  } from 'vue';
+  const props = defineProps({  
+    data: {  
+      bgImage: '',
+      name: '',
+      like: false,
+      collect: false,
+    }  
+  })
+  const emits = defineEmits({
+    
+  })
+</script>
+
+<style lang='scss'>
+  .item_border {
+    height: 390rpx;
+    width: 310rpx;
+    border-radius: 18rpx;
+    image {
+      height: 390rpx;
+      width: 310rpx;
+      border-radius: 18rpx;
+    }
+  }
+</style>

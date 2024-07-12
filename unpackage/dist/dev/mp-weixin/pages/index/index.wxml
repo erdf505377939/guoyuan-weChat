@@ -1,0 +1,1 @@
+<view class="content"><view class="header flex-row flex-align-center"><view class="back"><nav-back u-i="fc68bd5c-0" bind:__l="__l"/></view><text>主页</text></view><image class="logo" src="/static/logo.png"></image></view>

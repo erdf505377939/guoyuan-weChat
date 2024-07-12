@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "内容",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "nav-back": "../../components/NavBack/index"
+  }
+}

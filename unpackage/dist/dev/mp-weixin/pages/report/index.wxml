@@ -1,0 +1,1 @@
+<view class="content"><view class="header flex-row flex-align-center"><view class="back"><nav-back u-i="50fb4fec-0" bind:__l="__l"/></view><text>内容</text></view><image class="logo" src="/static/logo.png"></image></view>
