@@ -2,6 +2,10 @@
   "navigationBarTitleText": "首页",
   "navigationStyle": "custom",
   "usingComponents": {
-    "nav-back": "../../components/NavBack/index"
+    "uni-search-bar": "../../uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar",
+    "nav-back": "../../components/NavBack/index",
+    "swipper": "./components/Swipper/index",
+    "tab-item": "./components/Tab/index",
+    "article-item": "../../components/articleItem/index"
   }
 }

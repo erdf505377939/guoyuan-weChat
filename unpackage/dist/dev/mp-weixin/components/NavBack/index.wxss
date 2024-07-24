@@ -26,6 +26,8 @@
 .Nav_back {
   height: 48rpx;
   width: 48rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .Nav_back .image {
   height: 48rpx;

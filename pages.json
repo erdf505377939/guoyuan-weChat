@@ -20,6 +20,39 @@
 				"navigationBarTitleText": "我的",
         "navigationStyle": "custom"
 			}
+		},
+    {
+			"path": "pages/article/index",
+			"style": {
+				"navigationBarTitleText": "文章",
+        "navigationStyle": "custom"
+			}
+		},
+    {
+			"path": "pages/group/index",
+			"style": {
+				"navigationBarTitleText": "分组",
+        "navigationStyle": "custom"
+			}
+		},
+    {
+			"path": "pages/static_page/user_agreement/index",
+			"style": {
+				"navigationBarTitleText": "用户协议"
+			}
+		},
+    {
+			"path": "pages/static_page/privacy_agreement/index",
+			"style": {
+				"navigationBarTitleText": "隐私协议"
+			}
+		},
+    {
+			"path": "pages/user/login/index",
+			"style": {
+				"navigationBarTitleText": "登录",
+        "navigationStyle": "custom"
+			}
 		}
 	],
 	"globalStyle": {

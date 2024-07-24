@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "分组",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "nav-back": "../../components/NavBack/index",
+    "article-item": "../../components/articleItem/index"
+  }
+}

@@ -18,7 +18,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "3.4.9",
+  "libVersion": "3.4.10",
   "appid": "wx37d98a72bdfa93c4",
   "projectname": "guoyuan-app",
   "condition": {

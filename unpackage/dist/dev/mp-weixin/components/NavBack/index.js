@@ -18,11 +18,10 @@ const _sfc_main = {
     return (_ctx, _cache) => {
       return common_vendor.e({
         a: isHide.value
-      }, isHide.value ? {} : {}, {
+      }, isHide.value ? {
         b: common_vendor.o(naviBack)
-      });
+      } : {});
     };
   }
 };
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "/Users/snow/Documents/HBuilderProjects/guoyuan-app/components/NavBack/index.vue"]]);
-wx.createComponent(Component);
+wx.createComponent(_sfc_main);

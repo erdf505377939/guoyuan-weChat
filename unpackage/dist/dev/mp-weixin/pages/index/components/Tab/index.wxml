@@ -1,0 +1,1 @@
+<view class="{{['tab_border', 'flex-row', 'flex-align-center', 'flex-just-center', b && 'tab_border_focus']}}" bindtap="{{c}}"><text>{{a}}</text></view>

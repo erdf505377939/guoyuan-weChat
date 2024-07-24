@@ -2,7 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/report/index",
-    "pages/user/index"
+    "pages/user/index",
+    "pages/article/index",
+    "pages/group/index",
+    "pages/static_page/user_agreement/index",
+    "pages/static_page/privacy_agreement/index",
+    "pages/user/login/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -37,5 +42,6 @@
       }
     ]
   },
+  "lazyCodeLoading": "requiredComponents",
   "usingComponents": {}
 }

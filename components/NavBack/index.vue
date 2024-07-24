@@ -1,6 +1,6 @@
 <template>
-	<view class="Nav_back" @click="naviBack">
-		<image v-if="isHide" class="image" src="https://fe-web-guoyuan.oss-cn-beijing.aliyuncs.com/image/wechat/%E5%88%86%E7%BB%84%203.png" />
+	<view v-if="isHide" class="Nav_back" @click="naviBack">
+		<image class="image" src="https://fe-web-guoyuan.oss-cn-beijing.aliyuncs.com/image/wechat/%E5%88%86%E7%BB%84%203.png" />
 	</view>
 </template>
 
@@ -24,6 +24,8 @@ onMounted(() => {
 .Nav_back {
   height: 48rpx;
   width: 48rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
 	.image {
     height: 48rpx;
     width: 48rpx;

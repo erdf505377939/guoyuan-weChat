@@ -63,6 +63,9 @@
 }
 .user_content .user_avatar .avatar_border {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .user_content .user_avatar .avatar_border .tag {
   position: absolute;
@@ -73,16 +76,7 @@
   left: calc(50% + 50rpx);
   z-index: 10;
 }
-.user_content .user_avatar .avatar_border .avatar_wrapper {
-  height: 218rpx;
-  width: 218rpx;
-  padding: 0;
-  border: 0;
-  box-shadow: unset;
-  background-color: unset;
-  border-radius: 50%;
-}
-.user_content .user_avatar .avatar_border .avatar_wrapper .avatar {
+.user_content .user_avatar .avatar_border .avatar {
   height: 218rpx;
   width: 218rpx;
   border-radius: 50%;
@@ -143,7 +137,6 @@
   width: 100%;
   box-sizing: border-box;
   padding: 46rpx 48rpx 0rpx 48rpx;
-  height: calc(100% - 890rpx);
   margin-top: 80rpx;
 }
 .user_content .user_list .user_list_filter {
@@ -155,10 +148,9 @@
 }
 .user_content .user_list .user_list_item_border {
   overflow-y: scroll;
-  height: calc(100% - 140rpx);
+  height: 800rpx;
   row-gap: 38rpx;
   width: 100%;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
 }

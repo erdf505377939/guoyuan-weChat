@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "文章",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "zero-markdown-view": "../../uni_modules/zero-markdown-view/components/zero-markdown-view/zero-markdown-view",
+    "nav-back": "../../components/NavBack/index"
+  }
+}

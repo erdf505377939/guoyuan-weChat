@@ -34,4 +34,12 @@
   .flex-align-center {
 	align-items: center;
   }
+  .flex-center {
+	align-items: center;
+	justify-content: center;
+
+  }
+  rich-text {
+	word-break: break-all;
+  }
 </style>

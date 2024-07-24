@@ -5,6 +5,11 @@ if (!Math) {
   "./pages/index/index.js";
   "./pages/report/index.js";
   "./pages/user/index.js";
+  "./pages/article/index.js";
+  "./pages/group/index.js";
+  "./pages/static_page/user_agreement/index.js";
+  "./pages/static_page/privacy_agreement/index.js";
+  "./pages/user/login/index.js";
 }
 const _sfc_main = {
   onLaunch: function() {
@@ -17,9 +22,8 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "/Users/snow/Documents/HBuilderProjects/guoyuan-app/App.vue"]]);
 function createApp() {
-  const app = common_vendor.createSSRApp(App);
+  const app = common_vendor.createSSRApp(_sfc_main);
   return {
     app
   };

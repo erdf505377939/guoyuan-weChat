@@ -10,27 +10,27 @@
     <view class="user_avatar">
       <view class="avatar_border">
         <image src="https://fe-web-guoyuan.oss-cn-beijing.aliyuncs.com/image/wechat/tag.png" class="tag" />
-        <button class="avatar_wrapper" open-type="chooseAvatar" @chooseavatar="onChooseAvatar">
-          <image class="avatar" :src="userInfo.avatarUrl || 'https://fe-web-guoyuan.oss-cn-beijing.aliyuncs.com/image/wechat/avatar.png'" />
-        </button>
+        <!-- <button class="avatar_wrapper" open-type="chooseAvatar" @chooseavatar="onChooseAvatar"> -->
+        <image class="avatar" :src="userInfo.avatarUrl || 'https://fe-web-guoyuan.oss-cn-beijing.aliyuncs.com/image/wechat/avatar.png'" />
+        <!-- </button> -->
       </view>
     </view>
     <view class="user_info flex-column">
-      <view class="user_name">游客</view>
-      <view class="user_email">1978450878@qq.com</view>
+      <view class="user_name">{{ userInfo.nickName === '-' ? '游客' : userInfo.nickName }}</view>
+      <view class="user_email">{{ userInfo.phone }}</view>
     </view>
     <view class="user_trajectory flex-row flex-align-center flex-just-center">
       <view class="user_trajectory_contain flex-row flex-align-center">
         <view class="user_trajectory_item flex-column">
-          <text class="user_trajectory_item_val">24</text>
+          <text class="user_trajectory_item_val">0</text>
           <text class="user_trajectory_item_label">我的收藏</text>
         </view>
         <view class="user_trajectory_item flex-column">
-          <text class="user_trajectory_item_val">56</text>
+          <text class="user_trajectory_item_val">0</text>
           <text class="user_trajectory_item_label">历史记录</text>
         </view>
         <view class="user_trajectory_item flex-column">
-          <text class="user_trajectory_item_val">10</text>
+          <text class="user_trajectory_item_val">0</text>
           <text class="user_trajectory_item_label">我的关注</text>
         </view>
       </view>
@@ -51,71 +51,72 @@
     ref,
     onMounted
   } from 'vue';
-  
   import NavBack from '@/components/NavBack/index.vue'
-  import Item from './components/Item/index.vue'
+  import Item from '@/components/Item/index.vue'
   import TabItem from './components/Tab/index.vue'
-
+  import {
+		getThematicList,
+    regester
+	} from '@/api/index.js'
   const navBarHeight = ref(0)
   const topHight = ref(0)
-  const userInfo = ref({})
-  const filterFocus = ref('jsBasic')
-  const listData = ref([
-    {
-      name: 'js基础汇总',
-      id: '1',
-      bgImage: 'https://fe-web-guoyuan.oss-cn-beijing.aliyuncs.com/image/wechat/fengmian/fengmian1.jpg',
-      like: false,
-      collect: false,
-    },
-    {
-      name: 'css基础汇总',
-      id: '2',
-      bgImage: 'https://fe-web-guoyuan.oss-cn-beijing.aliyuncs.com/image/wechat/fengmian/fengmian2.jpg',
-      like: false,
-      collect: false,
-    },
-    {
-      name: 'css小技巧',
-      id: '3',
-      bgImage: 'https://fe-web-guoyuan.oss-cn-beijing.aliyuncs.com/image/wechat/fengmian/fengmian3.jpg',
-      like: false,
-      collect: false,
-    },
-    {
-      name: 'js小技巧',
-      id: '4',
-      bgImage: 'https://fe-web-guoyuan.oss-cn-beijing.aliyuncs.com/image/wechat/fengmian/fengmian4.jpg',
-      like: false,
-      collect: false,
-    },
-  ])
+  const userInfo = ref({
+    name: '-',
+    age: 0,
+    phone: '-',
+    avatar: '-',
+    nickName: '-',
+  })
+  const filterFocus = ref('0')
+  const listData = ref([])
   const filterList = ref([
+    {
+      name: '全部',
+      id: '0',
+      value: '0',
+    },
     {
       name: 'js基础',
       id: '1',
-      value: 'jsBasic',
+      value: '1',
     },
     {
       name: 'css基础',
       id: '2',
-      value: 'cssBasic',
+      value: '2',
     },
   ])
   onMounted(() => {
     let app = uni.getSystemInfoSync()
     let topHightO = app.statusBarHeight
     const menuButtonInfo = uni.getMenuButtonBoundingClientRect()
-    const navBarHeightO = menuButtonInfo.height + (menuButtonInfo.top - topHight) * 2
-    navBarHeight.value = navBarHeightO
     topHight.value = topHightO
+    const navBarHeightO = menuButtonInfo.height + (menuButtonInfo.top - topHightO) * 2
+    navBarHeight.value = navBarHeightO
+    // 请求类目的接口
+    fetchThematicList('')
   })
+  const fetchThematicList = (id) => {
+    getThematicList({id}).then((res) => {
+      // 请求数据成功，将将内容展示
+      const {data} = res
+      listData.value = data
+    }).catch((error) => {
+      uni.showToast({
+        title: '请求列表数据失败！',
+        icon: 'error',
+        duration: 2000
+      })
+    })
+  }
   const onChooseAvatar = (e) => {
     const { avatarUrl } = e.detail
     userInfo.value.avatarUrl = avatarUrl
   }
   const tabChange = (val) => {
     filterFocus.value = val
+    const id = val === '0' ? '' : val
+    fetchThematicList(id)
   }
 </script>
 
@@ -158,6 +159,9 @@
       margin-top: 54rpx;
       .avatar_border {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .tag {
           position: absolute;
           right: 0px;
@@ -167,20 +171,12 @@
           left: calc(50% + 50rpx);
           z-index: 10;
         }
-        .avatar_wrapper {
+        .avatar {
           height: 218rpx;
           width: 218rpx;
-          padding: 0;
-          border: 0;
-          box-shadow: unset;
-          background-color: unset;
+
           border-radius: 50%;
-          .avatar {
-            height: 218rpx;
-            width: 218rpx;
-            border-radius: 50%;
-            box-shadow: 0px 12px 20px  rgba(28, 18, 75, 0.37);
-          }
+          box-shadow: 0px 12px 20px  rgba(28, 18, 75, 0.37);
         }
       }
     }
@@ -239,7 +235,6 @@
       width: 100%;
       box-sizing: border-box;
       padding: 46rpx 48rpx 0rpx 48rpx;
-      height: calc(100% - 890rpx);
       margin-top: 80rpx;
       .user_list_filter {
         width: 100%;
@@ -250,11 +245,10 @@
       }
       .user_list_item_border {
         overflow-y: scroll;
-        height: calc(100% - 140rpx);
+        height: 800rpx;
         row-gap: 38rpx;
         width: 100%;
         flex-wrap: wrap;
-        align-items: center;
         justify-content: space-between;
       }
     }

@@ -8,6 +8,41 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/user/login/index",
+          "pathName": "pages/user/login/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/static_page/user_agreement/index",
+          "pathName": "pages/static_page/user_agreement/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/group/index",
+          "pathName": "pages/group/index",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/article/index",
+          "pathName": "pages/article/index",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/user/index",
           "pathName": "pages/user/index",
           "query": "",

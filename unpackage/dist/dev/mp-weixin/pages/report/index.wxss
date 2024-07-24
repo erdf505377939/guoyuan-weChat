@@ -23,6 +23,15 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.scroll-Y .scroll-area {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 46rpx 48rpx 0rpx 48rpx;
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  flex-wrap: wrap;
+}
 .content {
   height: 100%;
   display: flex;
@@ -32,7 +41,6 @@
 .content .header {
   padding-top: 54px;
   height: 40px;
-  background-color: aqua;
   z-index: 10;
   position: relative;
 }
@@ -46,20 +54,4 @@
 .content .header text {
   width: 100%;
   text-align: center;
-}
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
-}
-.text-area {
-  display: flex;
-  justify-content: center;
-}
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
 }

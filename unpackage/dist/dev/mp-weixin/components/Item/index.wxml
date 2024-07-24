@@ -1,0 +1,1 @@
+<view class="item_border" bindtap="{{b}}"><image src="{{a}}"/></view>

@@ -30,9 +30,6 @@
   position: relative;
 }
 .content .header {
-  padding-top: 54px;
-  height: 40px;
-  background-color: aqua;
   z-index: 10;
   position: relative;
 }
@@ -45,7 +42,29 @@
 }
 .content .header text {
   width: 100%;
-  text-align: center;
+  text-align: left;
+  text-indent: 56rpx;
+}
+.content .index_content .swipper_border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content .index_content .swipper_border .swipper_area {
+  height: 360rpx;
+  width: 645rpx;
+}
+.content .index_content .tab_area {
+  display: flex;
+  align-items: center;
+  gap: 42rpx;
+  padding: 30rpx 55rpx 16rpx 55rpx;
+}
+.content .index_content .article_scroll .article_area {
+  align-items: center;
+}
+.content .index_content .uni-searchbar {
+  padding: 20rpx 55rpx;
 }
 .logo {
   height: 200rpx;
